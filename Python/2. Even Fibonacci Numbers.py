@@ -6,28 +6,28 @@
 
 import math
 
-# num1 = 0
-# num2 = 1
-# nextNum = num2
-# max = 0
-# sum = 0
+num1 = 0
+num2 = 1
+nextNum = num2
+max = 0
+sum = 0
 
-# while max <= 4000000:
-#     num1, num2 = num2, nextNum
-#     nextNum = num1 + num2
-#     max = 0 + nextNum
-#     if nextNum % 2 == 0:
-#         sum = sum + nextNum
+while max <= 4000000:
+    num1, num2 = num2, nextNum
+    nextNum = num1 + num2
+    max = 0 + nextNum
+    if nextNum % 2 == 0:
+        sum = sum + nextNum
 
-# print(sum)
+print(sum)
 
-def evenFibSum(limit):
-    a, b = 1, 2
-    total = 0
-    while b <= limit:
-        if b % 2 == 0:
-            total += b
-        a, b = b, a + b
-    return total
+# def evenFibSum(limit):
+#     a, b = 1, 2
+#     total = 0
+#     while b <= limit:
+#         if b % 2 == 0:
+#             total += b
+#         a, b = b, a + b
+#     return total
 
-print(evenFibSum(int(input("Limit? : "))))
+# print(evenFibSum(int(input("Limit? : "))))
