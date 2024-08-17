@@ -2,6 +2,14 @@
 
 # Find the largest palindrome made from the product of 3-digit numbers.
 
+
+
+##########################
+### PALINDROME PRODUCT ###
+##########################
+
+
+
 import math
 
 # Function to check if number is a palindrome

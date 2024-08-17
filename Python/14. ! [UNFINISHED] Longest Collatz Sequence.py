@@ -14,6 +14,13 @@
     # ! Once the chain starts the terms are allowed to go above one million.
 
 
+
+################################
+### LONGEST COLLATZ SEQUENCE ###
+################################
+
+
+
 def collatz(n):
     # Add a count for terms:
     terms = 1

@@ -2,6 +2,14 @@
 
 # Find the sum of all multiples of 3 or 5 below 1000.
 
+
+
+###########################
+### MULTIPLES OF 3 OR 5 ###
+###########################
+
+
+
 import math
 
 num = 0
