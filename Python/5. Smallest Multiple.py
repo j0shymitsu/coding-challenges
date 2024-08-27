@@ -10,10 +10,6 @@
 
 
 
-for i in range(1, 10):
-    if x % i == 0:
-        break
-    else:
-        x += 1
+import math
 
-print(x)
+print(math.lcm(*range(1, 21))) # Cheating?
