@@ -42,26 +42,26 @@ def collatz(n):
 
 # Function for finding largest chain
 def chain(limit):
-    # Storing longest sequence
+    # Storing longest sequence and it's starting number
     largest = 0
+    start = 0
 
     # Current sequence length
     length = 0
 
     # Loop
-    while True:
-        for i in range(1, limit):
-            length = collatz(i)
-            if length > largest:
-                largest == length
-            else:
-                continue
-        break
+    for i in range(1, limit):
+        collatz(i)
+        
+
+    print(f"The largest sequence is starting at number {start} and has {largest} terms.")
+                
         
 
 
 # Call function
-collatz(13)
+chain(14)
+
 
 
 
