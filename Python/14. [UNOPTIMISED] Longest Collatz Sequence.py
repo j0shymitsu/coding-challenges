@@ -23,21 +23,16 @@
 
 # Function for Collatz sequence (working)
 def collatz(n):
-    # For final output
-    x = n
-    
     # Count for number of terms
     terms = 1
 
     # Function proper
     while n > 1:
         if n % 2 == 0:
-            n = n / 2
-            terms += 1
+            n = n // 2
         else:
             n = (3*n) + 1
-            terms +=1
-    print(f"The number of terms in the Collatz sequence starting {x} is {terms}.")
+        terms +=1
     return terms
 
 # Function for finding largest chain
@@ -46,22 +41,18 @@ def chain(limit):
     largest = 0
     start = 0
 
-    # Current sequence length
-    length = 0
-
     # Loop
     for i in range(1, limit):
-        collatz(i)
+        length = collatz(i)
+        if length > largest:
+            largest = length
+            start = i
         
-
     print(f"The largest sequence is starting at number {start} and has {largest} terms.")
+    return start, largest
+
+result = chain(1000000)
                 
-        
-
-
-# Call function
-chain(14)
-
 
 
 
