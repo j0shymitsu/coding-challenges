@@ -16,10 +16,18 @@
 
 
 
-1 = "one"
-2 = "two"
-3 = "three"
-4 = "four"
-5 = "five"
+num_list = []
+word_dict = {
+    "one":1,
+    "two":2,
+    "three":3,
+    "four":4,
+    "five":5,
+}
 
-for letter in 
+total = 0
+
+for string in word_dict.keys():
+    total = total + (len(string))
+print(total)
+
