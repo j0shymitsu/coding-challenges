@@ -45,10 +45,7 @@ t2 = [7, 4]
 t3 = [2, 4, 6]
 t4 = [6, 5, 9, 3]
 
-triangle = [t1, t2, t3, t4]
-
-current_num = 0
-comparison_index = [0]
+    
 
 
 
