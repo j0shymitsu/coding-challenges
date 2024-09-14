@@ -12,6 +12,24 @@
 # How many sundays fell on the first of the month during the twentieth century?
 
 days = ["MO", "TU", "WE", "TH", "FR", "SA", "SU"]
+
 months = {
-    "Jan" : range(0, 32)
+    "Jan" : 31,
+    "Feb" : 28,
+    "Mar" : 31,
+    "Apr" : 30,
+    "May" : 31,
+    "Jun" : 30,
+    "Jul" : 31,
+    "Aug" : 31,
+    "Sep" : 30,
+    "Oct" : 31,
+    "Nov" : 30,
+    "Dec" : 31
 }
+
+total_days = sum(list(months.values()))
+print(total_days)
+
+def day_on_date(num):
+    for day in range(1, total_days)
