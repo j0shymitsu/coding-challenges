@@ -36,15 +36,20 @@ class DivTriNum():
             x = i + x
         return x
 
-    def factors(self):
-        self.divisors = []
 
 
-n = int(input("enter n for it's corresponding triangle number: "))
+divisors = 0
 
-num = DivTriNum(n)
-tri = num.triangle_number()
-print({tri})
+while divisors < 5:
+    for i in range(1, 1000):
+        num = DivTriNum(i)
+        tri = num.triangle_number()
+
+        for i in range(1, tri):
+            if tri % i == 0:
+                divisors += 1
+
+
 
         
 
