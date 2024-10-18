@@ -15,7 +15,7 @@ import math
 num = 0
 total = 0
  
-while num < 10000:
+while num < 1000:
     num += 1
     if num % 3 == 0 or num % 5 == 0:
         total = total + num
