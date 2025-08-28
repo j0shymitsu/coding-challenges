@@ -23,31 +23,24 @@
 ########################################
 
 
+def calculate_triangle_number(n):
+    total = 1
+    for i in range(n, 1, -1):
+        total += i
+    return total
 
-class DivTriNum():
+def number_of_divisors(n):
+    divisors = set()
+    
+    for i in range(1, n + 1):
+        if n % i == 0:
+            divisors.add(i)
 
-    def __init__(self, nth):
-        self.nth = nth
-        self.divisors = 0
-
-    def triangle_number(self):
-        x = self.nth
-        for i in range(1, x):
-            x = i + x
-        return x
+    return len(divisors)
 
 
 
-divisors = 0
 
-while divisors < 5:
-    for i in range(1, 1000):
-        num = DivTriNum(i)
-        tri = num.triangle_number()
-
-        for i in range(1, tri):
-            if tri % i == 0:
-                divisors += 1
 
 
 
