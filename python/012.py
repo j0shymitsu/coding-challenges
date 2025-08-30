@@ -31,21 +31,23 @@ def calculate_triangle_number(n):
     return total
 
 def number_of_divisors(n):
-    divisors = set()
-    divisors.add(1)
-    divisors.add(n)
-    
-    for i in range(1, math.ceil(n / 2) + 1):
+    divisors = 0
+    sqrtn = int(math.sqrt(n))
+
+    for i in range(1, sqrtn + 1):
         if n % i == 0:
-            divisors.add(i)
-
-    return len(divisors)
-
+            divisors += 2
+        if sqrtn * sqrtn == n:
+            divisors -= 1
+    
+    return divisors
+ 
+current_triangle_number = 0
 total_divisors = 0
 n = 1
 
 while total_divisors < 501:
-    current_triangle_number = calculate_triangle_number(n)
+    current_triangle_number += n
     total_divisors = number_of_divisors(current_triangle_number)
     print(f"Current triangle number: {current_triangle_number} - Number of divisors: {total_divisors}")
     n += 1
