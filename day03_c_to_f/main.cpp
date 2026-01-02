@@ -8,30 +8,59 @@
 #include <sstream>
 using namespace std;
 
+const int degrees_max = 10000;
+const int degrees_min = -10000;
+
 float fahrToCels(float degrees_f);
 float celsToFahr(float degrees_c);
 
 int main()
 {
     float fahrenheit, celsius;
-    char choice;
 
     while (true)
     {
+        string line;
+
         cout << "\nDo you want to convert FROM Celsius or Fahrenheit? (Enter lowercase 'f' or 'c', 'x' to exit): ";
-        cin >> choice;
+
+        if (!getline(cin, line)){ break; }
+
+        if (line.empty())
+        {
+            cout << "ERROR: Please enter a choice.\n";
+            continue;
+        }
+
+        char choice = line[0];
 
         if (choice == 'f')
         {
             cout << "Enter the temperature in fahrenheit: ";
             cin >> fahrenheit;
-            cout << fahrenheit << " degrees Fahrenheit in Celsius: " << fahrToCels(fahrenheit) << endl;
+
+            if (fahrenheit < degrees_min || fahrenheit > degrees_max)
+            {
+                cout << fahrenheit << " degrees Fahrenheit in Celsius: " << fahrToCels(fahrenheit) << endl;
+            }
+            else
+            {
+                cout << "Please enter valid input, and check temp within min/max range (+/- 10000)";
+            }
         }
         else if (choice == 'c')
         {
             cout << "Enter the temperature in celsius: ";
             cin >> celsius;
-            cout << celsius << " degrees Celsius in Fahrenheit: " << celsToFahr(celsius) << endl;
+
+            if (celsius < degrees_min || celsius > degrees_max)
+            {
+                cout << celsius << " degrees Celsius in Fahrenheit: " << celsToFahr(celsius) << endl;
+            }
+            else
+            {
+                cout << "Please enter valid input, and check temp within min/max range (+/- 10000)";
+            }
         }
         else if (choice == 'x')
         {
@@ -39,7 +68,7 @@ int main()
         }
         else
         {
-            cout << "ERROR: Please enter a valid choice." << endl;
+            cout << "ERROR: Please enter 'f', 'c' or 'x'.\n";
         }
     }
 
