@@ -22,15 +22,9 @@ int main()
     {
         string line;
 
-        cout << "\nDo you want to convert FROM Celsius or Fahrenheit? (Enter lowercase 'f' or 'c', 'x' to exit): ";
+        cout << "Do you want to convert FROM Celsius or Fahrenheit? (Enter lowercase 'f' or 'c', 'x' to exit): ";
 
         if (!getline(cin, line)){ break; }
-
-        if (line.empty())
-        {
-            cout << "ERROR: Please enter a choice.\n";
-            continue;
-        }
 
         char choice = line[0];
 
@@ -39,7 +33,7 @@ int main()
             cout << "Enter the temperature in fahrenheit: ";
             cin >> fahrenheit;
 
-            if (fahrenheit < degrees_min || fahrenheit > degrees_max)
+            if (fahrenheit > degrees_min && fahrenheit < degrees_max)
             {
                 cout << fahrenheit << " degrees Fahrenheit in Celsius: " << fahrToCels(fahrenheit) << endl;
             }
@@ -53,7 +47,7 @@ int main()
             cout << "Enter the temperature in celsius: ";
             cin >> celsius;
 
-            if (celsius < degrees_min || celsius > degrees_max)
+            if (celsius > degrees_min && celsius < degrees_max)
             {
                 cout << celsius << " degrees Celsius in Fahrenheit: " << celsToFahr(celsius) << endl;
             }
@@ -65,10 +59,6 @@ int main()
         else if (choice == 'x')
         {
             break;
-        }
-        else
-        {
-            cout << "ERROR: Please enter 'f', 'c' or 'x'.\n";
         }
     }
 
