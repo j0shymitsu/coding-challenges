@@ -5,6 +5,7 @@
 #include <iostream>
 #include <limits>
 #include <sstream>
+#include "../libs/utils.h"
 using namespace std;
 
 double interest(double amount, double rate, int years);
@@ -58,40 +59,5 @@ double interest(double amount, double rate, int years)
     return amount;
 }
 
-double read_double(const char* prompt)
-{
-    double x{};
 
-    while (true)
-    {
-        cout << prompt;
 
-        if (cin >> x)
-        {
-            return x;       // ok
-        }
-
-        cout << "Invalid number, try again.\n";
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    }
-}
-
-int read_int(const char* prompt)
-{
-    int x{};
-
-    while (true)
-    {
-        cout << prompt;
-
-        if (cin >> x)
-        {
-            return x;
-        }
-
-        cout << "Must be whole number, try again.\n";
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    }
-}
