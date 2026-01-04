@@ -11,7 +11,7 @@
 #include <iostream>
 #include <limits>
 
-int read_int(const char* prompt)
+int readInt(const char* prompt)
 {
     int x{};
 
@@ -30,7 +30,7 @@ int read_int(const char* prompt)
     }
 }
 
-double read_double(const char* prompt)
+double readDouble(const char* prompt)
 {
     double x{};
 
@@ -38,13 +38,13 @@ double read_double(const char* prompt)
     {
         std::cout << prompt;
 
-        if (cin >> x)
+        if (std::cin >> x)
         {
             return x;       // ok
         }
 
         std::cout << "Invalid number, try again.\n";
         std::cin.clear();
-        std::cin.ignore(numeric_limits<std::streamsize>::max(), '\n');
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
 }

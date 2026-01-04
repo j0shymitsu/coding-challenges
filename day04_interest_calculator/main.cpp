@@ -10,7 +10,7 @@ using namespace std;
 
 double interest(double amount, double rate, int years);
 double read_double(const char* prompt);
-int read_int(const char* prompt);
+int readInt(const char* prompt);
 
 
 int main()
@@ -21,9 +21,9 @@ int main()
         {
             cout << "--- INTEREST CALCULATOR ---" << endl;
 
-            double initial = read_double("Enter your initial amount: ");
-            double rate = read_double("Enter your interest rate: ");
-            int years = read_int("Enter your years supplied: ");
+            double initial = readDouble("Enter your initial amount: ");
+            double rate = readDouble("Enter your interest rate: ");
+            int years = readInt("Enter your years supplied: ");
 
             float total = interest(initial, rate, years);
 
