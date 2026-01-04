@@ -3,15 +3,11 @@
 //
 
 #include <iostream>
-#include <limits>
 #include <sstream>
 #include "../libs/utils.h"
 using namespace std;
 
 double interest(double amount, double rate, int years);
-double read_double(const char* prompt);
-int readInt(const char* prompt);
-
 
 int main()
 {
