@@ -24,7 +24,7 @@ int readInt(const char* prompt)
             return x;
         }
 
-        std::cout << "Must be whole number, try again.\n";
+        std::cout << "Must be whole number in range +/- 2147483648. Please try again.\n";
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
