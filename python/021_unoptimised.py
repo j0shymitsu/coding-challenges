@@ -5,34 +5,37 @@
 
 # Evaluate the sum of all amicable numbers under 1000
 
-def is_amicable(x, y):
-    state = False
-    divisors_of_x = []
-    divisors_of_y = []
+import math
 
-    for i in range (1, x):
-        if x % i == 0:
-            divisors_of_x.append(i)
+def sum_divisors(n):
 
-    for i in range(1, y):
-        if y % i == 0:
-            divisors_of_y.append(i)
+    if n <= 1:
+        return 0
+    
+    total = 1
+    limit = int(math.sqrt(n))
 
+    for i in range(2, limit + 1):
 
-    if x != y and sum(divisors_of_x) == y and sum(divisors_of_y) == x:
-        state = True
-    else:
-        state = False
+        if n % i == 0:
+            total += i
+            other = n // i
 
-    return state 
+            if other != i and other != n:
+                total += other
 
+    return total
+
+limit = 10000
 total = 0
 
-for i in range (1, 10000):
-    for j in range(1, 10000):
-        if is_amicable(i, j):
+for i in range(2, limit):
+
+    j = sum_divisors(i)
+    
+    if j != i and j < limit:
+        if sum_divisors(j) == i:
             total += i
-            total += j
 
 print(total)
 
