@@ -6,7 +6,7 @@
 #include <sstream>
 #include "../libs/utils.h"
 
-bool isEven(const int x);
+bool isEven(int x);
 
 int main()
 {
