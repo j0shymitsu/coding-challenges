@@ -48,3 +48,5 @@ double readDouble(const char* prompt)
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
 }
+
+// TODO: Add a helper function for user input exit status; keep reusing code
