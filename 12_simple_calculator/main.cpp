@@ -6,7 +6,7 @@
 #include <sstream>
 #include "../libs/utils.h"
 
-double simpleCalculator(double x, double y, char operation);
+double simple_calculator(double x, double y, char operation);
 
 int main()
 {
@@ -14,14 +14,14 @@ int main()
     {
         std::string exit_status = "y";
 
-        double a = readDouble("Enter number x: ");
-        double b = readDouble("Enter number y: ");
+        double a = read_double("Enter number x: ");
+        double b = read_double("Enter number y: ");
         char operation;
 
         std::cout << "Which operation? (+ - * /): ";
         std::cin >> operation;
 
-        std::cout << simpleCalculator(a, b, operation);
+        std::cout << simple_calculator(a, b, operation);
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
 
@@ -37,7 +37,7 @@ int main()
     return 0;
 }
 
-double simpleCalculator(double a, double b, char operation)
+double simple_calculator(double a, double b, char operation)
 {
     switch (operation)
     {

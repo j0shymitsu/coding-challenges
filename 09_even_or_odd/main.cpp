@@ -6,7 +6,8 @@
 #include <sstream>
 #include "../libs/utils.h"
 
-bool isEven(int x);
+bool is_even(int x);
+bool is_even(int x);
 
 int main()
 {
@@ -15,8 +16,8 @@ int main()
         std::string exit_status = "y";
 
         std::cout << "\nEVEN OR ODD CHECKER\n";
-        int x = readInt("Enter the number you want to check: ");
-        bool even_or_odd = isEven(x);
+        int x = read_int("Enter the number you want to check: ");
+        bool even_or_odd = is_even(x);
 
         if (even_or_odd)
         {
@@ -43,7 +44,7 @@ int main()
     return 0;
 }
 
-bool isEven(const int x)
+bool is_even(const int x)
 {
     if (x == 0)
     {

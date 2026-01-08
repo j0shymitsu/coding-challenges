@@ -11,8 +11,8 @@ using namespace std;
 const int degrees_max = 10000;
 const int degrees_min = -10000;
 
-float fahrToCels(float degrees_f);
-float celsToFahr(float degrees_c);
+float fahr_to_cels(float degrees_f);
+float cels_to_fahr(float degrees_c);
 
 int main()
 {
@@ -35,7 +35,7 @@ int main()
 
             if (fahrenheit > degrees_min && fahrenheit < degrees_max)
             {
-                cout << fahrenheit << " degrees Fahrenheit in Celsius: " << fahrToCels(fahrenheit) << endl;
+                cout << fahrenheit << " degrees Fahrenheit in Celsius: " << fahr_to_cels(fahrenheit) << endl;
             }
             else
             {
@@ -65,7 +65,7 @@ int main()
     return 0;
 }
 
-float fahrToCels(float degrees_f)
+float fahr_to_cels(float degrees_f)
 {
     float degrees_c = ((5.0 / 9.0) * (degrees_f - 32));
     return degrees_c;

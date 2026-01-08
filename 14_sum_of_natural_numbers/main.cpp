@@ -4,11 +4,9 @@
 
 #include <iostream>
 #include <sstream>
-#include <bits/ranges_base.h>
-
 #include "../libs/utils.h"
 
-int sumOfNaturalNumbersUpTo(int n);
+int sum_of_natural_numbers_up_to(int n);
 
 int main()
 {
@@ -17,9 +15,9 @@ int main()
         std::string exit_status = "y";
 
         std::cout << "\nThis program calculates the sum of all numbers up to a given number.\n";
-        int range = readInt("Enter the number you'd like the sum up to (max 50000): " );
+        int range = read_int("Enter the number you'd like the sum up to (max 50000): " );
 
-        std::cout << sumOfNaturalNumbersUpTo(range);
+        std::cout << sum_of_natural_numbers_up_to(range);
 
         std::cout << "\n\nWould you like to do another number? (y/n): ";
         std::cin >> exit_status;
@@ -33,7 +31,7 @@ int main()
     return 0;
 }
 
-int sumOfNaturalNumbersUpTo(int n)
+int sum_of_natural_numbers_up_to(int n)
 {
     int total = 0;
 

@@ -6,7 +6,7 @@
 #include <sstream>
 #include "../libs/utils.h"
 
-std::string gradeClassifier(double mark);
+std::string grade_classifier(double mark);
 
 int main()
 {
@@ -16,7 +16,7 @@ int main()
 
         std::cout << "\n--- GRADE CHECKER ---\n";
 
-        double grade = readDouble("Enter your mark out of 100: ");
+        double grade = read_double("Enter your mark out of 100: ");
 
         if (grade > 100 || grade < 0)
         {
@@ -24,7 +24,7 @@ int main()
         }
         else
         {
-            std::cout << "A mark of " << grade << " earns you a " << gradeClassifier(grade);
+            std::cout << "A mark of " << grade << " earns you a " << grade_classifier(grade);
         }
 
         std::cout << "\nWould you like to grade another mark? (y/n): ";
@@ -40,7 +40,7 @@ int main()
     return 0;
 }
 
-std::string gradeClassifier(double mark)
+std::string grade_classifier(double mark)
 {
     if (mark <= 39)
     {

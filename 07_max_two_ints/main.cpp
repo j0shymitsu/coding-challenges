@@ -7,7 +7,7 @@
 #include "../libs/utils.h"
 using namespace std;
 
-int maxOfTwoIntegers(int a, int b);
+int max_of_two_ints(int a, int b);
 
 int main()
 {
@@ -16,9 +16,9 @@ int main()
         string exit_status = "y";
 
         cout << "\nMAX OF TWO INTEGERS:" << endl;
-        int a = readInt("Enter first number: ");
-        int b = readInt("Enter second number: ");
-        int c = maxOfTwoIntegers(a, b);
+        int a = read_int("Enter first number: ");
+        int b = read_int("Enter second number: ");
+        int c = max_of_two_ints(a, b);
 
         cout << "The largest numbers is: " << c << endl;
         cout << "\nDo you want to compare two more numbers? (y/n): " << endl;
@@ -33,7 +33,7 @@ int main()
     return 0;
 }
 
-int maxOfTwoIntegers(int a, int b)
+int max_of_two_ints(int a, int b)
 {
     if (a > b)
     {

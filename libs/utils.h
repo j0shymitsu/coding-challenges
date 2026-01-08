@@ -11,7 +11,7 @@
 #include <iostream>
 #include <limits>
 
-int readInt(const char* prompt)
+int read_int(const char* prompt)
 {
     int x{};
 
@@ -30,7 +30,7 @@ int readInt(const char* prompt)
     }
 }
 
-double readDouble(const char* prompt)
+double read_double(const char* prompt)
 {
     double x{};
 

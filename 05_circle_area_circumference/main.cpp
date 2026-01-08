@@ -8,8 +8,8 @@
 #include "../libs/utils.h"
 using namespace std;
 
-double returnArea(double radius);
-double returnCircumference(double radius);
+double return_area(double radius);
+double return_circumference(double radius);
 
 const double PI = 3.141592653589;
 
@@ -21,9 +21,9 @@ int main()
         {
             cout << endl << "--- CIRCLE CALCULATOR ---\n" << endl;
 
-            double radius = readDouble("Enter your radius (not a euphemism): ");
-            double area = returnArea(radius);
-            double circumference = returnCircumference(radius);
+            double radius = read_double("Enter your radius (not a euphemism): ");
+            double area = return_area(radius);
+            double circumference = return_circumference(radius);
 
             if (radius < 0)
             {
@@ -45,12 +45,12 @@ int main()
     return 0;
 }
 
-double returnArea(double radius)
+double return_area(double radius)
 {
     return pow(radius, 2.0) * PI;
 }
 
-double returnCircumference(double radius)
+double return_circumference(double radius)
 {
     return 2 * (radius * PI);
 }

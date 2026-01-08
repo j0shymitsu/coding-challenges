@@ -6,7 +6,7 @@
 #include <sstream>
 #include "../libs/utils.h"
 
-void multiplicationTable(int x, int range);
+void multiplication_table(int x, int range);
 
 int main()
 {
@@ -14,10 +14,10 @@ int main()
     {
         std::string exit_status = "y";
 
-        int number = readInt("\nEnter the number you would like the multiplication chart for (max 100): ");
-        int range = readInt("Enter the range you would like to multiply up to (max 1000): ");
+        int number = read_int("\nEnter the number you would like the multiplication chart for (max 100): ");
+        int range = read_int("Enter the range you would like to multiply up to (max 1000): ");
 
-        multiplicationTable(number, range);
+        multiplication_table(number, range);
 
         std::cout << "\nWould you like to do another? (y/n): ";
         std::cin >> exit_status;
@@ -31,7 +31,7 @@ int main()
     return 0;
 }
 
-void multiplicationTable(int x, int range)
+void multiplication_table(int x, int range)
 {
     std::cout << "\n";
 

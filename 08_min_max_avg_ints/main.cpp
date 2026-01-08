@@ -7,9 +7,9 @@
 #include "../libs/utils.h"
 using namespace std;
 
-int minNumber(int a, int b, int c);
-int maxNumber(int a, int b, int c);
-double avgNumber(int a, int b, int c);
+int min_number(int a, int b, int c);
+int max_number(int a, int b, int c);
+double avg_number(int a, int b, int c);
 
 int main()
 {
@@ -19,13 +19,13 @@ int main()
 
         cout << "\nMIN, MAX, AND AVERAGE OF NUMBERS:" << endl;
 
-        int a = readInt("Enter integer a: ");
-        int b = readInt("Enter integer b: ");
-        int c = readInt("Enter integer c: ");
+        int a = read_int("Enter integer a: ");
+        int b = read_int("Enter integer b: ");
+        int c = read_int("Enter integer c: ");
 
-        cout << "\nThe smallest number of the group is: " << minNumber(a, b, c) << endl;
-        cout << "\nThe maximum number of the group is: " << maxNumber(a, b, c) << endl;
-        cout << "\nThe average of the group is: " << avgNumber(a, b, c) << endl;
+        cout << "\nThe smallest number of the group is: " << min_number(a, b, c) << endl;
+        cout << "\nThe maximum number of the group is: " << max_number(a, b, c) << endl;
+        cout << "\nThe average of the group is: " << avg_number(a, b, c) << endl;
 
         cout << "\nDo you want to compare more numbers? (y/n): " << endl;
         cin >> exit_status;
@@ -38,7 +38,7 @@ int main()
     return 0;
 }
 
-int minNumber (int a, int b, int c)
+int min_number (int a, int b, int c)
 {
     int min = 0;
 
@@ -58,7 +58,7 @@ int minNumber (int a, int b, int c)
     return min;
 }
 
-int maxNumber(int a, int b, int c)
+int max_number(int a, int b, int c)
 {
     int max = 0;
 
@@ -78,7 +78,7 @@ int maxNumber(int a, int b, int c)
     return max;
 }
 
-double avgNumber(int a, int b, int c)
+double avg_number(int a, int b, int c)
 {
     return static_cast<double>(a + b + c) / 3;
 }

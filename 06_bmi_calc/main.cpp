@@ -8,7 +8,7 @@
 #include "../libs/utils.h"
 using namespace std;
 
-double bmiCalculator(double weight, double height);
+double calculate_bmi(double weight, double height);
 
 int main()
 {
@@ -18,9 +18,9 @@ int main()
         {
             cout << "\nBMI CALCULATOR" << endl;
 
-            double weight_kg = readDouble("Enter your weight in kilograms (to 2dp): ");
-            double height_m = readDouble("Enter your height in metres (to 2dp): ");
-            double bmi = bmiCalculator(weight_kg, height_m);
+            double weight_kg = read_double("Enter your weight in kilograms (to 2dp): ");
+            double height_m = read_double("Enter your height in metres (to 2dp): ");
+            double bmi = calculate_bmi(weight_kg, height_m);
 
             if (weight_kg <= 0 || height_m <= 0)
             {
@@ -40,7 +40,7 @@ int main()
     return 0;
 }
 
-double bmiCalculator(double weight, double height)
+double calculate_bmi(double weight, double height)
 {
     double bmi = weight / ::pow(height, 2);
 

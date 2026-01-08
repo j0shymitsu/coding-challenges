@@ -6,7 +6,7 @@
 #include <sstream>
 #include "../libs/utils.h"
 
-bool isLeapYear(int year);
+bool is_leap_year(int year);
 
 int main()
 {
@@ -16,8 +16,8 @@ int main()
 
         std::cout << "\nLEAP YEAR CHECKER\n";
 
-        int year = readInt("Enter the year you want to check: ");
-        bool is_leap = isLeapYear(year);
+        int year = read_int("Enter the year you want to check: ");
+        bool is_leap = is_leap_year(year);
 
         if (is_leap)
         {
@@ -40,7 +40,7 @@ int main()
     return 0;
 }
 
-bool isLeapYear(int year)
+bool is_leap_year(int year)
 {
     if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0))
     {
