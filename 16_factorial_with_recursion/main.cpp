@@ -46,13 +46,14 @@ unsigned long long factorial_recursively(int n)
 
     if (n < 0) throw std::invalid_argument("factorial: n must be non-negative");
 
-    if (n == 0) return 1;
-
-    for (int i = 1; i <= n; i++)
+    // Base case
+    if (n == 0)
     {
-        result *= i;
+        return 1;
     }
-
-    return result;
+    else
+    {
+        return n * factorial_recursively(n - 1);
+    }
 }
 
