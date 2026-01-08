@@ -55,7 +55,7 @@ int read_int(const char* prompt)
             }
             catch (std::out_of_range&)
             {
-                std::cout << "\033[31mMust be within int range (+/- . Please try again.\033[0m\n\n";
+                std::cout << "\033[31mMust be within int range (+/-2147438647). Please try again.\033[0m\n\n";
                 continue;
             }
         }
