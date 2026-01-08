@@ -22,3 +22,8 @@
 /dist/
 /bin/
 /out/
+cpp/cmake-build-*/
+cmake-build-*/
+
+# CLion project files
+.idea/
