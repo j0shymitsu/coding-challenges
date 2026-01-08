@@ -5,13 +5,12 @@
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even valued terms.
 
 #include <iostream>
-using namespace std;
 
 int even_fib_sum(int limit);
 
 int main()
 {
-    cout << even_fib_sum(4000000) << endl;
+    std::cout << even_fib_sum(4000000) << std::endl;
     return 0;
 }
 

@@ -3,13 +3,12 @@
 // Find the sum of all multiples of 3 or 5 below 1000.
 
 #include <iostream>
-using namespace std;
 
 int sum_multiples_of_three_or_five(int limit);
 
 int main()
 {
-	cout << sum_multiples_of_three_or_five(1000) << endl;	
+	std::cout << sum_multiples_of_three_or_five(1000) << std::endl;
 	return 0;
 }
 
