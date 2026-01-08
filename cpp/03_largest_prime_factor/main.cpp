@@ -3,33 +3,25 @@
 
 #include <vector>
 #include <iostream>
-using namespace std;
-
-void factorsOf(int);             // Return factors of a given number
-vector<int> isPrime(vector<int>);       // Return primes from a given list of integers
+#include "../libs/utils.h"
 
 int main()
 {
-    int num = 13195;
-    factorsOf(num);
+    std::vector<long> factors_of_number = return_factors_of(600851475143L);
+    std::vector<long> factors_of_prime;
+
+    for (auto number : factors_of_number)
+    {
+        if (is_prime(number))
+        {
+            factors_of_prime.push_back(number);
+        };
+    }
+
+    for (auto number : factors_of_prime)
+    {
+        std::cout << number << std::endl;
+    }
 
     return 0;
-}
-
-void factorsOf(int num)
-{
-    vector<int> factors = {};
-
-    for (size_t i = 1; i < (num + 1); i++)
-    {
-        if (num % i == 0)
-        {
-            factors.push_back(i);
-        }
-    }
-
-    for (int n : factors)
-    {
-        cout << n << ' ';
-    }
 }
