@@ -25,7 +25,7 @@ int read_int(const char* prompt)
         if (!std::getline(std::cin, input))
         {
             std::cin.clear();
-            std::cout << "\033[31m\nEXCEPTION read_int: Input error. Must be a whole number in range +/- 2147483648. Please try again.\033[0m\n\n";
+            std::cout << "\033[31m\nEXCEPTION read_int: Input error. Please try again.\033[0m\n\n";
             continue;
         }
 
@@ -53,11 +53,11 @@ int read_int(const char* prompt)
             try
             {
                 // Check string length and value before converting
-                long temp = std::stol(input);
+                long long temp = std::stoll(input);
 
                 if (temp < INT_MIN  || temp > INT_MAX)
                 {
-                    std::cout << "\033[31m\nEXCEPTION read_int: Must be within int range (+/-2147438647). Please try again.\033[0m\n";
+                    std::cout << "\033[31m\nEXCEPTION read_int: Must be within int range (-2147483648 to 2147483647). Please try again.\033[0m\n";
                     continue;
                 }
 
@@ -65,7 +65,7 @@ int read_int(const char* prompt)
             }
             catch (std::out_of_range&)
             {
-                std::cout << "\033[31m\nEXCEPTION read_int: Must be within int range (+/-2147438647). Please try again.\033[0m\n";
+                std::cout << "\033[31m\nEXCEPTION read_int: Must be within int range (-2147483648 to 2147483647). Please try again.\033[0m\n";
                 continue;
             }
         }

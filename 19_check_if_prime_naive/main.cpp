@@ -55,7 +55,7 @@ bool is_prime(int n)
 
     if (n < 0) throw std::invalid_argument("\033[31mis_prime: Must be a positive number.\033[0m");
 
-    if (n > 2147438647) throw std::out_of_range("\033[31mis_prime: Number out of range (max 2147438647).\033[0m");
+    if (n > 2147483647) throw std::out_of_range("\033[31mis_prime: Number out of range (max 2147438647).\033[0m");
 
     if (n == 1) return false;
 
