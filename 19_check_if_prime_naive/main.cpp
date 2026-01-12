@@ -8,8 +8,6 @@
 #include <stdexcept>
 #include "../libs/utils.h"
 
-bool is_prime(int n);
-
 int main()
 {
     std::cout << "----------------------------";
@@ -47,27 +45,4 @@ int main()
     }
 
     return 0;
-}
-
-bool is_prime(int n)
-{
-    double range = std::sqrt(n);
-
-    if (n < 0) throw std::invalid_argument("\033[31mis_prime: Must be a positive number.\033[0m");
-
-    if (n > 2147483647) throw std::out_of_range("\033[31mis_prime: Number out of range (max 2147438647).\033[0m");
-
-    if (n == 1) return false;
-
-    if (n == 2) return true;
-
-    for (int i = 2; i <= static_cast<int>(range); i++)
-    {
-        if (n % i == 0)
-        {
-            return false;
-        };
-    }
-
-    return true;
 }
