@@ -109,6 +109,8 @@ bool is_prime(int n)
 
     if (n == 2) return true;
 
+    if (n % 2 == 0) return false;
+
     for (int i = 2; i <= static_cast<int>(range); i++)
     {
         if (n % i == 0)
