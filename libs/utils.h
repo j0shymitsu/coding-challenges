@@ -9,7 +9,7 @@
 
 #pragma once
 #include <iostream>
-#include <limits>
+#include <climits>
 
 int read_int(const char* prompt)
 {
@@ -25,12 +25,13 @@ int read_int(const char* prompt)
         if (!std::getline(std::cin, input))
         {
             std::cin.clear();
-            std::cout << "\033[31mInput error. Must be a whole number in range +/- 2147483648. Please try again.\033[0m\n\n";
+            std::cout << "\033[31m\nEXCEPTION read_int: Input error. Must be a whole number in range +/- 2147483648. Please try again.\033[0m\n\n";
             continue;
         }
 
         // Allow plus and minus
         std::size_t start = 0;
+
         if (!input.empty() && (input[0] == '+' || input[0] == '-'))
         {
             start = 1;
@@ -38,6 +39,7 @@ int read_int(const char* prompt)
 
         // Check entire rest of input is digits
         bool all_digits = !input.empty() && start < input.size();
+
         for (std::size_t i = start; i < input.size() && all_digits; ++i)
         {
             if (input[i] < '0' || input[i] > '9')
@@ -50,17 +52,25 @@ int read_int(const char* prompt)
         {
             try
             {
-                int x = std::stoi(input);   // string to int
-                return x;                   // Only leave loop if all valid
+                // Check string length and value before converting
+                long temp = std::stol(input);
+
+                if (temp < INT_MIN  || temp > INT_MAX)
+                {
+                    std::cout << "\033[31m\nEXCEPTION read_int: Must be within int range (+/-2147438647). Please try again.\033[0m\n";
+                    continue;
+                }
+
+                return static_cast<int>(temp);      // Convert back
             }
             catch (std::out_of_range&)
             {
-                std::cout << "\033[31mMust be within int range (+/-2147438647). Please try again.\033[0m\n\n";
+                std::cout << "\033[31m\nEXCEPTION read_int: Must be within int range (+/-2147438647). Please try again.\033[0m\n";
                 continue;
             }
         }
 
-        std::cout << "\033[31mMust be a whole number (no decimals or letters). Please try again.\033[0m\n\n";
+        std::cout << "\033[31m\nEXCEPTION read_int: Must be a whole number (no decimals or letters). Please try again.\033[0m\n";
     }
 }
 
@@ -77,7 +87,7 @@ double read_double(const char* prompt)
             return x;       // ok
         }
 
-        std::cout << "\033[31mInvalid number, try again.\033[0m\n";
+        std::cout << "\033[31m\nEXCEPTION read_double: Invalid number, try again.\033[0m\n";
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
