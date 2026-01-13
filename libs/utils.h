@@ -15,8 +15,6 @@
 
 inline int read_int(const char* prompt)
 {
-    int x{};
-
     while (true)
     {
         std::cout << prompt;
@@ -59,7 +57,9 @@ inline int read_int(const char* prompt)
 
                 if (temp < INT_MIN  || temp > INT_MAX)
                 {
-                    std::cout << "\033[31m\nEXCEPTION read_int: Must be within int range (-2147483648 to 2147483647). Please try again.\033[0m\n";
+                    std::cout << "\033[31m\nEXCEPTION "
+                                 "read_int: Must be within int range (-2147483648 to 2147483647). "
+                                 "Please try again.\033[0m\n";
                     continue;
                 }
 
@@ -67,12 +67,15 @@ inline int read_int(const char* prompt)
             }
             catch (std::out_of_range&)
             {
-                std::cout << "\033[31m\nEXCEPTION read_int: Must be within int range (-2147483648 to 2147483647). Please try again.\033[0m\n";
+                std::cout << "\033[31m\nEXCEPTION "
+                             "read_int: Must be within int range (-2147483648 to 2147483647). "
+                             "Please try again.\033[0m\n";
                 continue;
             }
         }
 
-        std::cout << "\033[31m\nEXCEPTION read_int: Must be a whole number (no decimals or letters). Please try again.\033[0m\n";
+        std::cout << "\033[31m\nEXCEPTION "
+                     "read_int: Must be a whole number (no decimals or letters). Please try again.\033[0m\n";
     }
 }
 
@@ -93,6 +96,60 @@ inline double read_double(const char* prompt)
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
+}
+
+inline long long read_int64(const char* prompt)             // Read long long int
+{
+    while (true)
+    {
+        std::cout << prompt;
+
+        std::string input;
+
+        // Stream failure = repeat asking until valid input met
+        if (!std::getline(std::cin, input))
+        {
+            std::cin.clear();
+            std::cout << "\033[31m\nEXCEPTION read_int64: Input error. Please try again.\033[0m\n\n";
+            continue;
+        }
+
+        // Allow plus and minus
+        std::size_t start = 0;
+
+        if (!input.empty() && (input[0] == '+' || input[0] == '-'))
+        {
+            start = 1;
+        }
+
+        // Check entire rest of input is digits
+        bool all_digits = !input.empty() && start < input.size();
+
+        for (std::size_t i = start; i < input.size() && all_digits; ++i)
+        {
+            if (input[i] < '0' || input[i] > '9')
+            {
+                all_digits = false;
+            }
+        }
+
+        if (all_digits)
+        {
+            try
+            {
+                return std::stoll(input);
+            }
+            catch (std::out_of_range&)
+            {
+                std::cout << "\033[31m\nEXCEPTION "
+                             "read_int64: Must be within 64-bit (long long) integer range (-9.22e18 to 9.22e18). "
+                             "Please try again.\033[0m\n";
+                continue;
+            }
+        }
+
+        std::cout << "\033[31m\nEXCEPTION "
+                     "read_int64: Must be a whole number (no decimals or letters). Please try again.\033[0m\n";
 }
 
 // TODO: Add a helper function for user input exit status; keep reusing code
