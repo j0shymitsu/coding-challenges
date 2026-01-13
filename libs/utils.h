@@ -13,7 +13,7 @@
 #include <iostream>
 #include <stdexcept>
 
-int read_int(const char* prompt)
+inline int read_int(const char* prompt)
 {
     int x{};
 
@@ -76,7 +76,7 @@ int read_int(const char* prompt)
     }
 }
 
-double read_double(const char* prompt)
+inline double read_double(const char* prompt)
 {
     double x{};
 
@@ -97,7 +97,7 @@ double read_double(const char* prompt)
 
 // TODO: Add a helper function for user input exit status; keep reusing code
 
-bool is_prime(int n)
+inline bool is_prime(int n)
 {
     double range = std::sqrt(n);
 
@@ -120,4 +120,9 @@ bool is_prime(int n)
     }
 
     return true;
+}
+
+inline void print_error(const std::string& message)
+{
+    std::cout << "\033[31m\nEXCEPTION \033[0m" << message << "\n";
 }
