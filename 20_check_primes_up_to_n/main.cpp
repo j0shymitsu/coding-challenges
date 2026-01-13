@@ -69,7 +69,7 @@ std::vector<int> return_prime_to(int n)
 
     if (n > COUNT_MAX) throw std::out_of_range("\033[31mreturn_prime_to: Number out of range (max 100000000).\033[0m");
 
-    for (int i = 2; i <= n; i++)
+    for (int i = 3; i <= n; i += 2)
     {
         if (is_prime[i])
         {
