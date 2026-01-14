@@ -9,43 +9,36 @@ using namespace std;
 
 int max_of_two_ints(int a, int b);
 
-int main()
-{
-    while (true)
-    {
-        string exit_status = "y";
+int main() {
+  while (true) {
+    string exit_status = "y";
 
-        cout << "\nMAX OF TWO INTEGERS:" << endl;
-        int a = read_int("Enter first number: ");
-        int b = read_int("Enter second number: ");
-        int c = max_of_two_ints(a, b);
+    cout << "\nMAX OF TWO INTEGERS:" << endl;
+    int a = ReadInt("Enter first number: ");
+    int b = ReadInt("Enter second number: ");
+    int c = max_of_two_ints(a, b);
 
-        cout << "The largest numbers is: " << c << endl;
-        cout << "\nDo you want to compare two more numbers? (y/n): " << endl;
-        cin >> exit_status;
+    cout << "The largest numbers is: " << c << endl;
+    cout << "\nDo you want to compare two more numbers? (y/n): " << endl;
+    cin >> exit_status;
 
-        if (exit_status == "n" || exit_status == "N")
-        {
-            break;
-        }
+    if (exit_status == "n" || exit_status == "N") {
+      break;
     }
+  }
 
-    return 0;
+  return 0;
 }
 
-int max_of_two_ints(int a, int b)
-{
-    if (a > b)
-    {
-        return a;
-    }
-    if (a < b)
-    {
-        return b;
-    }
-    if (a == b)
-    {
-        cout << "Both numbers are the same! ";
-        return a;
-    }
+int max_of_two_ints(int a, int b) {
+  if (a > b) {
+    return a;
+  }
+  if (a < b) {
+    return b;
+  }
+  if (a == b) {
+    cout << "Both numbers are the same! ";
+    return a;
+  }
 }

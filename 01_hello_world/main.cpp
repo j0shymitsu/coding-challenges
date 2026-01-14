@@ -5,10 +5,10 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
-    cout << "Hello, my name is Josh Birch." << endl;
-    cout << "I am currently studying Cybersecurity and University of Chester." << endl;
+int main() {
+  cout << "Hello, my name is Josh Birch." << endl;
+  cout << "I am currently studying Cybersecurity and University of Chester."
+       << endl;
 
-    return 0;
+  return 0;
 }

@@ -8,49 +8,40 @@
 
 double simple_calculator(double x, double y, char operation);
 
-int main()
-{
-    while (true)
-    {
-        std::string exit_status = "y";
+int main() {
+  while (true) {
+    std::string exit_status = "y";
 
-        double a = read_double("Enter number x: ");
-        double b = read_double("Enter number y: ");
-        char operation;
+    double a = ReadDouble("Enter number x: ");
+    double b = ReadDouble("Enter number y: ");
+    char operation;
 
-        std::cout << "Which operation? (+ - * /): ";
-        std::cin >> operation;
+    std::cout << "Which operation? (+ - * /): ";
+    std::cin >> operation;
 
-        std::cout << simple_calculator(a, b, operation);
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cout << simple_calculator(a, b, operation);
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
+    std::cout << "\nWould you like to perform another operation? (y/n): ";
+    std::cin >> exit_status;
 
-        std::cout << "\nWould you like to perform another operation? (y/n): ";
-        std::cin >> exit_status;
-
-        if (exit_status == "n" || exit_status == "N")
-        {
-            break;
-        }
+    if (exit_status == "n" || exit_status == "N") {
+      break;
     }
+  }
 
-    return 0;
+  return 0;
 }
 
-double simple_calculator(double a, double b, char operation)
-{
-    switch (operation)
-    {
-        case '+':
-            return a + b;
-        case '-':
-            return a - b;
-        case '*':
-            return a * b;
-        case '/':
-            return a / b;
-        default:
-            std::cout << "ERROR. Please enter a valid operation (+ - * /). EXIT STATUS: " ;
-            return -1;
-    }
+double simple_calculator(double a, double b, char operation) {
+  switch (operation) {
+    case '+':return a + b;
+    case '-':return a - b;
+    case '*':return a * b;
+    case '/':return a / b;
+    default:
+      std::cout
+          << "ERROR. Please enter a valid operation (+ - * /). EXIT STATUS: ";
+      return -1;
+  }
 }

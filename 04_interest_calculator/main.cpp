@@ -7,53 +7,41 @@
 #include "../libs/utils.h"
 using namespace std;
 
-double interest(double amount, double rate, int years);
+double Interest(double amount, double rate, int years);
 
-int main()
-{
-    while (true)
-    {
-        try
-        {
-            cout << "--- INTEREST CALCULATOR ---" << endl;
+int main() {
+  while (true) {
+    try {
+      cout << "--- INTEREST CALCULATOR ---" << endl;
 
-            double initial = read_double("Enter your initial amount: ");
-            double rate = read_double("Enter your interest rate: ");
-            int years = read_int("Enter your years supplied: ");
+      double initial = ReadDouble("Enter your initial amount: ");
+      double rate = ReadDouble("Enter your interest rate: ");
+      int years = ReadInt("Enter your years supplied: ");
 
-            float total = interest(initial, rate, years);
+      float total = Interest(initial, rate, years);
 
-            if (initial <= 0 || rate <= 0 || years <= 0)
-            {
-                cout << "All fields must be greater than 0.";
-                break;
-            }
+      if (initial <= 0 || rate <= 0 || years <= 0) {
+        cout << "All fields must be greater than 0.";
+        break;
+      }
 
-            cout << "Your total amount after " << years << " years will be " << total << endl;
-            break;
-
-
-        }
-        catch (int x)
-        {
-            return -1;
-        }
+      cout << "Your total amount after " << years << " years will be " << total
+           << endl;
+      break;
+    } catch (int x) {
+      return -1;
     }
+  }
 
-    return 0;
+  return 0;
 }
 
-double interest(double amount, double rate, int years)
-{
-    float factor = 1.0 + rate / 100.0;
+double Interest(double amount, double rate, int years) {
+  float factor = 1.0 + rate / 100.0;
 
-    for (int i = 1; i <= years; i++)
-    {
-        amount *= factor;
-    }
+  for (int i = 1; i <= years; i++) {
+    amount *= factor;
+  }
 
-    return amount;
+  return amount;
 }
-
-
-

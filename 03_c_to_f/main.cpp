@@ -11,68 +11,61 @@ using namespace std;
 const int degrees_max = 10000;
 const int degrees_min = -10000;
 
-float fahr_to_cels(float degrees_f);
-float cels_to_fahr(float degrees_c);
+float FahrToCels(float degrees_f);
 
-int main()
-{
-    float fahrenheit, celsius;
+float CelsToFahr(float degrees_c);
 
-    while (true)
-    {
-        string line;
+int main() {
+  float fahrenheit, celsius;
 
-        cout << "Do you want to convert FROM Celsius or Fahrenheit? (Enter lowercase 'f' or 'c', 'x' to exit): ";
+  while (true) {
+    string line;
 
-        if (!getline(cin, line)){ break; }
+    cout
+      << "Do you want to convert FROM Celsius or Fahrenheit? "
+      << "(Enter lowercase 'f' or 'c', 'x' to exit): ";
 
-        char choice = line[0];
+    if (!getline(cin, line)) { break; }
 
-        if (choice == 'f')
-        {
-            cout << "Enter the temperature in fahrenheit: ";
-            cin >> fahrenheit;
+    char choice = line[0];
 
-            if (fahrenheit > degrees_min && fahrenheit < degrees_max)
-            {
-                cout << fahrenheit << " degrees Fahrenheit in Celsius: " << fahr_to_cels(fahrenheit) << endl;
-            }
-            else
-            {
-                cout << "Please enter valid input, and check temp within min/max range (+/- 10000)";
-            }
-        }
-        else if (choice == 'c')
-        {
-            cout << "Enter the temperature in celsius: ";
-            cin >> celsius;
+    if (choice == 'f') {
+      cout << "Enter the temperature in fahrenheit: ";
+      cin >> fahrenheit;
 
-            if (celsius > degrees_min && celsius < degrees_max)
-            {
-                cout << celsius << " degrees Celsius in Fahrenheit: " << celsToFahr(celsius) << endl;
-            }
-            else
-            {
-                cout << "Please enter valid input, and check temp within min/max range (+/- 10000)";
-            }
-        }
-        else if (choice == 'x')
-        {
-            break;
-        }
+      if (fahrenheit > degrees_min && fahrenheit < degrees_max) {
+        cout << fahrenheit << " degrees Fahrenheit in Celsius: "
+             << FahrToCels(fahrenheit) << endl;
+      } else {
+        cout
+          << "Please enter valid input, and check temp within min/max range "
+          << "(+/- 10000)";
+      }
+    } else if (choice == 'c') {
+      cout << "Enter the temperature in celsius: ";
+      cin >> celsius;
+
+      if (celsius > degrees_min && celsius < degrees_max) {
+        cout << celsius << " degrees Celsius in Fahrenheit: "
+             << CelsToFahr(celsius) << endl;
+      } else {
+        cout
+          << "Please enter valid input, and check temp within min/max range "
+          << "(+/- 10000)";
+      }
+    } else if (choice == 'x') {
+      break;
     }
-
-    return 0;
+  }
+  return 0;
 }
 
-float fahr_to_cels(float degrees_f)
-{
-    float degrees_c = ((5.0 / 9.0) * (degrees_f - 32));
-    return degrees_c;
+float FahrToCels(float degrees_f) {
+  float degrees_c = ((5.0 / 9.0) * (degrees_f - 32));
+  return degrees_c;
 }
 
-float celsToFahr(float degrees_c)
-{
-    float degrees_f = ((degrees_c * 1.8) + 32);
-    return degrees_f;
+float CelsToFahr(float degrees_c) {
+  float degrees_f = ((degrees_c * 1.8) + 32);
+  return degrees_f;
 }
