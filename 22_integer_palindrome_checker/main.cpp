@@ -8,7 +8,13 @@
 #include <stdexcept>
 #include "../libs/utils.h"
 
-bool IsPalindrome(int n);
+enum class PalindromeError {
+  kOk,
+  kNegative,
+  kOutOfRange
+};
+
+PalindromeError IsPalindrome(int n, bool& is_palindrome);
 
 int main() {
   std::cout << "-------------------------"
@@ -17,16 +23,22 @@ int main() {
 
   while (true) {
     int num = ReadInt(
-        "\nEnter a positive number (max 2147483647) to check if it's a palindrome: ");
+        "\nEnter a positive number (max 2147483647) "
+        "to check if it's a palindrome: ");
 
-    try {
-      if (IsPalindrome(num)) {
-        std::cout << "\n" << num << " \033[92mIS\033[0m a palindrome!\n";
+    bool is_palindrome = false;
+    PalindromeError err = IsPalindrome(num, is_palindrome);
+
+    if (err == PalindromeError::kOk) {
+      if (is_palindrome) {
+        std::cout << "\n" << num << " \033[92mIS\033[0m a palindrome. \n";
       } else {
         std::cout << "\n" << num << " is \033[31mNOT\033[0m a palindrome.\n";
       }
-    } catch (const std::exception& e) {
-      PrintError(e.what());
+    } else if (err == PalindromeError::kNegative) {
+      PrintError("\033[31m(func IsPalindrome): Number must be non-negative.\033[0m");
+    } else if (err == PalindromeError::kOutOfRange) {
+      PrintError("\033[31m(func IsPalindrome): Integer out of range.\033[0m");
     }
 
     std::string exit_status;
@@ -40,15 +52,9 @@ int main() {
   return 0;
 }
 
-bool IsPalindrome(int n) {
-  if (n > INT_MAX) {
-    throw std::out_of_range(
-        "\033[31mis_palindrome: Integer out of range.\033[0m");
-  }
-
+PalindromeError IsPalindrome(int n, bool& is_palindrome) {
   if (n < 0) {
-    throw std::out_of_range(
-        "\033[31mis_palindrome: Number must be non-negative.\033[0m");
+    return PalindromeError::kNegative;
   }
 
   int num = n;
@@ -59,9 +65,7 @@ bool IsPalindrome(int n) {
     n = n / 10;
   }
 
-  if (rev_num == num) {
-    return true;
-  }
+  is_palindrome = (rev_num == num);
 
-  return false;
+  return PalindromeError::kOk;
 }

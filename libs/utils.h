@@ -175,5 +175,5 @@ inline bool IsPrime(int n) {
 
 // Prints an error message to the console
 inline void PrintError(const std::string& message) {
-  std::cout << "\033[31m\nEXCEPTION \033[0m" << message << "\n";
+  std::cout << "\033[31m\nERROR \033[0m" << message << "\n";
 }
