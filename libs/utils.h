@@ -13,6 +13,14 @@
 #include <iostream>
 #include <stdexcept>
 
+// For number errors
+enum class NumberError {
+  kOk,
+  kNegative,
+  kOutOfRange,
+  kDivideByZero,
+};
+
 // Reads an integer from user input with error handling
 inline int ReadInt(const char* prompt) {
   while (true) {
