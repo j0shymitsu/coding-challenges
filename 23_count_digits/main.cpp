@@ -17,7 +17,7 @@ int main() {
 
   while (true) {
     long long num = ReadInt64(
-        "\nEnter a number to check its total number of digits: ");
+      "\nEnter a number to check its total number of digits: ");
 
     int num_of_digits = CountDigits(num);
 
@@ -41,7 +41,7 @@ int CountDigits(long long n)
   n = std::llabs(n);    // Absolute value
   int count = 0;
 
-  while(n > 0) {
+  while (n > 0) {
     n /= 10;
     ++count;
   }
