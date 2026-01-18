@@ -22,10 +22,9 @@ enum class NumberError {
 };
 
 // Reads an integer from user input with error handling
-inline int ReadInt(const char* prompt) {
+inline int ReadInt(const char* prompt, int min = INT_MIN, int max = INT_MAX) {
   while (true) {
     std::cout << prompt;
-
     std::string input;
 
     // Stream failure = repeat asking until valid input met
@@ -56,6 +55,15 @@ inline int ReadInt(const char* prompt) {
       try {
         // Check string length and value before converting
         long long temp = std::stoll(input);
+
+        if (temp < min || temp > max) {
+          std::cout << "\n033[31ReadInt: Must be between "
+                    << min
+                    << " and "
+                    << max
+                    << ". Please try again.\033[0m\n";
+          continue;
+        }
 
         if (temp < INT_MIN || temp > INT_MAX) {
           std::cout << "\033[31m\nEXCEPTION "
