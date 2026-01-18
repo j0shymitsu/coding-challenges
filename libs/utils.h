@@ -57,7 +57,7 @@ inline int ReadInt(const char* prompt, int min = INT_MIN, int max = INT_MAX) {
         long long temp = std::stoll(input);
 
         if (temp < min || temp > max) {
-          std::cout << "\n033[31ReadInt: Must be between "
+          std::cout << "\n\33[31mReadInt: Must be between "
                     << min
                     << " and "
                     << max

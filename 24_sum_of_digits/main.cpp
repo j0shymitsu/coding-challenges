@@ -4,9 +4,6 @@
 
 #include <iostream>
 #include <limits>
-#include <cmath>
-#include <sstream>
-#include <vector>
 #include "../libs/utils.h"
 
 int SumOfDigits(long long n);
