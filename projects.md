@@ -88,7 +88,6 @@
 88. Improved CSV parser that handles quoted fields.
 89. Simple URL parser: split scheme, host, path from a URL string.
 90. Extract all unique words from a text and print sorted.
-### *Classes*
 91. Implement a simple struct for Student (name, id, marks) and print records.
 92. Read a list of students, compute class average and topper.
 93. Sort students by mark (using std::sort with custom comparator).
