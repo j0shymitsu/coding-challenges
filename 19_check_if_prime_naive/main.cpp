@@ -15,10 +15,10 @@ int main() {
 
   while (true) {
     int n =
-        ReadInt("\nEnter a number (max 2147438647) to check if it is prime: ");
+        readInt("\nEnter a number (max 2147438647) to check if it is prime: ");
 
     try {
-      auto result = IsPrime(n);
+      auto result = isPrime(n);
 
       if (result) {
         std::cout << "\n" << n << "\033[92m IS \033[0ma prime number.\n";

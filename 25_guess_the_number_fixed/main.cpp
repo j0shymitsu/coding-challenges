@@ -15,14 +15,14 @@ int main() {
 
   while (true) {
     int guess_total = 1;
-    int target_number = ReadInt(
+    int target_number = readInt(
         "\nPLAYER 1 - Enter a number between 1-1000: ", 1, 1000
         );
     while (guess_total <= 5)
     {
       std::cout << "\n\nCURRENT GUESS: "
                 << (guess_total);
-      int current_guess = ReadInt(
+      int current_guess = readInt(
           "\nPLAYER 2 - Enter a guess: ", 1, 1000);
 
       // Game loop

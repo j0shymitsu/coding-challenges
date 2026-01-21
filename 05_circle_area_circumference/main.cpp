@@ -19,7 +19,7 @@ int main() {
     try {
       cout << endl << "--- CIRCLE CALCULATOR ---\n" << endl;
 
-      double radius = ReadDouble("Enter your radius (not a euphemism): ");
+      double radius = readDouble("Enter your radius (not a euphemism): ");
       double area = ReturnArea(radius);
       double circumference = ReturnCircumference(radius);
 

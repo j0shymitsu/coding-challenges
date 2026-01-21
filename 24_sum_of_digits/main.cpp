@@ -14,7 +14,7 @@ int main() {
             << "-------------------------------";
 
   while (true) {
-    long long num = ReadInt64(
+    long long num = readInt64(
         "\nEnter a number to return the sum of its digits: ");
 
     int sum_of_digits = SumOfDigits(num);

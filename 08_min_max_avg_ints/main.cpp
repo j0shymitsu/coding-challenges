@@ -19,9 +19,9 @@ int main() {
 
     cout << "\nMIN, MAX, AND AVERAGE OF NUMBERS:" << endl;
 
-    int a = ReadInt("Enter integer a: ");
-    int b = ReadInt("Enter integer b: ");
-    int c = ReadInt("Enter integer c: ");
+    int a = readInt("Enter integer a: ");
+    int b = readInt("Enter integer b: ");
+    int c = readInt("Enter integer c: ");
 
     cout << "\nThe smallest number of the group is: " << min_number(a, b, c)
          << endl;

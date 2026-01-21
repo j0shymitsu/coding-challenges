@@ -26,7 +26,7 @@ int main()
     while (guess_total <= 5)
     {
       std::cout << "\n\nCURRENT GUESS: " << (guess_total);
-      int current_guess = ReadInt(
+      int current_guess = readInt(
           "\nEnter a guess: ", 1, 1000);
 
       // Game loop

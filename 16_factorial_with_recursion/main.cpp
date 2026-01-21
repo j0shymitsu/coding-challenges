@@ -13,7 +13,7 @@ int main() {
   while (true) {
     std::cout << "\n--- FACTORIAL CALCULATOR ---\n";
     unsigned int
-        n = ReadInt("Enter a number to calculate its factorial (up to 20): ");
+        n = readInt("Enter a number to calculate its factorial (up to 20): ");
 
     // Handle the throws without terminating the program
     try {

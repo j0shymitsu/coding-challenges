@@ -14,7 +14,7 @@ int main() {
 
     std::cout << "\nLEAP YEAR CHECKER\n";
 
-    int year = ReadInt("Enter the year you want to check: ");
+    int year = readInt("Enter the year you want to check: ");
     bool is_leap = is_leap_year(year);
 
     if (is_leap) {

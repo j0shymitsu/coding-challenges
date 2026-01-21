@@ -14,8 +14,8 @@ int main() {
     string exit_status = "y";
 
     cout << "\nMAX OF TWO INTEGERS:" << endl;
-    int a = ReadInt("Enter first number: ");
-    int b = ReadInt("Enter second number: ");
+    int a = readInt("Enter first number: ");
+    int b = readInt("Enter second number: ");
     int c = max_of_two_ints(a, b);
 
     cout << "The largest numbers is: " << c << endl;

@@ -14,9 +14,9 @@ int main() {
     try {
       cout << "--- INTEREST CALCULATOR ---" << endl;
 
-      double initial = ReadDouble("Enter your initial amount: ");
-      double rate = ReadDouble("Enter your interest rate: ");
-      int years = ReadInt("Enter your years supplied: ");
+      double initial = readDouble("Enter your initial amount: ");
+      double rate = readDouble("Enter your interest rate: ");
+      int years = readInt("Enter your years supplied: ");
 
       float total = Interest(initial, rate, years);
 

@@ -12,10 +12,10 @@ int main() {
   while (true) {
     std::string exit_status = "y";
 
-    int number = ReadInt(
+    int number = readInt(
         "\nEnter the number you would like the multiplication chart for (max 100): ");
     int range =
-        ReadInt("Enter the range you would like to multiply up to (max 1000): ");
+        readInt("Enter the range you would like to multiply up to (max 1000): ");
 
     multiplication_table(number, range);
 

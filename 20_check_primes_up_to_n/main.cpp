@@ -21,7 +21,7 @@ int main() {
   std::cout << "---------------------\n";
 
   while (true) {
-    int n = ReadInt(
+    int n = readInt(
         "\nEnter a number (max 2147483647) to list all prime numbers up to that number: ");
 
     try {

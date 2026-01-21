@@ -16,7 +16,7 @@ int main() {
             << "-------------------------\n";
 
   while (true) {
-    long long num = ReadInt64(
+    long long num = readInt64(
       "\nEnter a number to check its total number of digits: ");
 
     int num_of_digits = CountDigits(num);

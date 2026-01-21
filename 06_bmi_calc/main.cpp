@@ -15,9 +15,9 @@ int main() {
     try {
       cout << "\nBMI CALCULATOR" << endl;
 
-      double weight_kg = ReadDouble(
+      double weight_kg = readDouble(
           "Enter your weight in kilograms (to 2dp): ");
-      double height_m = ReadDouble(
+      double height_m = readDouble(
           "Enter your height in metres (to 2dp): ");
       double bmi = CalculateBmi(
           weight_kg, height_m);

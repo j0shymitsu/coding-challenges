@@ -15,7 +15,7 @@ int main() {
     std::cout
         << "\nThis program calculates the sum of all numbers up to a given number.\n";
     int range =
-        ReadInt("Enter the number you'd like the sum up to (max 50000): ");
+        readInt("Enter the number you'd like the sum up to (max 50000): ");
 
     std::cout << sum_of_natural_numbers_up_to(range);
 

@@ -22,7 +22,7 @@ int main() {
             << "-------------------------\n";
 
   while (true) {
-    int num = ReadInt(
+    int num = readInt(
         "\nEnter a positive number (max 2147483647) "
         "to check if it's a palindrome: ");
 
@@ -36,9 +36,9 @@ int main() {
         std::cout << "\n" << num << " is \033[31mNOT\033[0m a palindrome.\n";
       }
     } else if (err == PalindromeError::kNegative) {
-      PrintError("\033[31m(func IsPalindrome): Number must be non-negative.\033[0m");
+      printError("\033[31m(func IsPalindrome): Number must be non-negative.\033[0m");
     } else if (err == PalindromeError::kOutOfRange) {
-      PrintError("\033[31m(func IsPalindrome): Integer out of range.\033[0m");
+      printError("\033[31m(func IsPalindrome): Integer out of range.\033[0m");
     }
 
     std::string exit_status;

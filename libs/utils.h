@@ -22,7 +22,7 @@ enum class NumberError {
 };
 
 // Reads an integer from user input with error handling
-inline int ReadInt(const char* prompt, int min = INT_MIN, int max = INT_MAX) {
+inline int readInt(const char* prompt, int min = INT_MIN, int max = INT_MAX) {
   while (true) {
     std::cout << prompt;
     std::string input;
@@ -30,7 +30,7 @@ inline int ReadInt(const char* prompt, int min = INT_MIN, int max = INT_MAX) {
     // Stream failure = repeat asking until valid input met
     if (!std::getline(std::cin, input)) {
       std::cin.clear();
-      std::cout << "\033[31m\nEXCEPTION ReadInt: Input error. "
+      std::cout << "\033[31m\nEXCEPTION readInt: Input error. "
                 << "Please try again.\033[0m\n\n";
       continue;
     }
@@ -57,7 +57,7 @@ inline int ReadInt(const char* prompt, int min = INT_MIN, int max = INT_MAX) {
         long long temp = std::stoll(input);
 
         if (temp < min || temp > max) {
-          std::cout << "\n\33[31mReadInt: Must be between "
+          std::cout << "\n\33[31mreadInt: Must be between "
                     << min
                     << " and "
                     << max
@@ -67,7 +67,7 @@ inline int ReadInt(const char* prompt, int min = INT_MIN, int max = INT_MAX) {
 
         if (temp < INT_MIN || temp > INT_MAX) {
           std::cout << "\033[31m\nEXCEPTION "
-                    << "ReadInt: Must be within int range "
+                    << "readInt: Must be within int range "
                     <<  "(-2147483648 to 2147483647). "
                     << "Please try again.\033[0m\n";
           continue;
@@ -77,20 +77,20 @@ inline int ReadInt(const char* prompt, int min = INT_MIN, int max = INT_MAX) {
       }
       catch (std::out_of_range&) {
         std::cout << "\033[31m\nEXCEPTION "
-                  << "ReadInt: Must be within int range "
+                  << "readInt: Must be within int range "
                   << "(-2147483648 to 2147483647). "
                   << "Please try again.\033[0m\n";
         continue;
       }
     }
     std::cout << "\033[31m\nEXCEPTION "
-              << "ReadInt: Must be a whole number (no decimals or letters). "
+              << "readInt: Must be a whole number (no decimals or letters). "
               << "Please try again.\033[0m\n";
   }
 }
 
 // Reads a decimal value from the user with error handling
-inline double ReadDouble(const char* prompt) {
+inline double readDouble(const char* prompt) {
   double x{};
 
   while (true) {
@@ -100,7 +100,7 @@ inline double ReadDouble(const char* prompt) {
       return x;       // ok
     }
 
-    std::cout << "\033[31m\nEXCEPTION ReadDouble: "
+    std::cout << "\033[31m\nEXCEPTION readDouble: "
               << "Invalid number, try again.\033[0m\n";
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -108,7 +108,7 @@ inline double ReadDouble(const char* prompt) {
 }
 
 // Reads a 64-bit integer from the user with error handling
-inline long long ReadInt64(const char* prompt)
+inline long long readInt64(const char* prompt)
 {
   while (true) {
     std::cout << prompt;
@@ -118,7 +118,7 @@ inline long long ReadInt64(const char* prompt)
     // Stream failure = repeat asking until valid input met
     if (!std::getline(std::cin, input)) {
       std::cin.clear();
-      std::cout << "\033[31m\nEXCEPTION ReadInt64: "
+      std::cout << "\033[31m\nEXCEPTION readInt64: "
                 << "Input error. Please try again.\033[0m\n\n";
       continue;
     }
@@ -145,7 +145,7 @@ inline long long ReadInt64(const char* prompt)
       }
       catch (std::out_of_range&) {
         std::cout << "\033[31m\nEXCEPTION "
-                  << "ReadInt64: Must be within 64-bit integer range "
+                  << "readInt64: Must be within 64-bit integer range "
                   << "(-9.22e18 to 9.22e18). "
                   << "Please try again.\033[0m\n";
         continue;
@@ -153,25 +153,25 @@ inline long long ReadInt64(const char* prompt)
     }
 
     std::cout << "\033[31m\nEXCEPTION "
-              << "ReadInt64: Must be a whole number. "
-              <<   "Please try again.\033[0m\n";
+              << "readInt64: Must be a whole number. "
+              << "Please try again.\033[0m\n";
   }
 }
 
 // TODO: Add a helper function for user input exit status; keep reusing code
 
 // Checks if a number is a prime number
-inline bool IsPrime(int n) {
+inline bool isPrime(int n) {
   double range = std::sqrt(n);
 
   if (n < 0) {
     throw std::invalid_argument(
-      "\033[31mis_prime: Must be a positive number.\033[0m");
+      "\033[31misPrime: Must be a positive number.\033[0m");
   }
 
   if (n > 2147483647) {
     throw std::out_of_range(
-      "\033[31mis_prime: Number out of range (max 2147438647).\033[0m");
+      "\033[31misPrime: Number out of range (max 2147438647).\033[0m");
   }
 
   if (n == 1) { return false; }
@@ -190,6 +190,6 @@ inline bool IsPrime(int n) {
 }
 
 // Prints an error message to the console
-inline void PrintError(const std::string& message) {
+inline void printError(const std::string& message) {
   std::cout << "\033[31m\nERROR \033[0m" << message << "\n";
 }

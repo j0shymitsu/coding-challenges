@@ -13,8 +13,8 @@ long long power(int base, int exp);
 int main() {
   while (true) {
     std::cout << "\n--- EXPONENT CALCULATOR ---\n\n";
-    int n = ReadInt("Enter the base: ");
-    int p = ReadInt("Enter the exponent: ");
+    int n = readInt("Enter the base: ");
+    int p = readInt("Enter the exponent: ");
 
     try {
       auto result = power(n, p);

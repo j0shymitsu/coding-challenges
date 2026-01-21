@@ -15,7 +15,7 @@ int main() {
     std::string exit_status = "y";
 
     std::cout << "\nEVEN OR ODD CHECKER\n";
-    int x = ReadInt("Enter the number you want to check: ");
+    int x = readInt("Enter the number you want to check: ");
     bool even_or_odd = is_even(x);
 
     if (even_or_odd) {

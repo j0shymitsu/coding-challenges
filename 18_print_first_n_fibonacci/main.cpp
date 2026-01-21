@@ -17,7 +17,7 @@ int main() {
   std::cout << "\033[34m---------------------------\033[0m\n\n";
 
   while (true) {
-    int up_to = ReadInt(
+    int up_to = readInt(
         "How many Fibonacci numbers would you like to generate? (Max 92): ");
 
     try {

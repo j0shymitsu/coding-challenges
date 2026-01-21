@@ -12,8 +12,8 @@ int main() {
   while (true) {
     std::string exit_status = "y";
 
-    double a = ReadDouble("Enter number x: ");
-    double b = ReadDouble("Enter number y: ");
+    double a = readDouble("Enter number x: ");
+    double b = readDouble("Enter number y: ");
     char operation;
 
     std::cout << "Which operation? (+ - * /): ";

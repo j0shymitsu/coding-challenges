@@ -17,7 +17,7 @@ int main() {
   std::cout << "----------------------\n";
 
   while (true) {
-    int num = ReadInt(
+    int num = readInt(
         "\nEnter a number (max 2147483647) to get it back in reverse "
         "(NOTE: Reversed number must also be lower than this value!) : ");
 
@@ -27,7 +27,7 @@ int main() {
       std::cout << "\n" << num << " in reverse is: " << reversed_num
                 << std::endl;
     } catch (const std::exception& e) {
-      PrintError(e.what());
+      printError(e.what());
     }
 
     std::string exit_status;

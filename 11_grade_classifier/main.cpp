@@ -14,7 +14,7 @@ int main() {
 
     std::cout << "\n--- GRADE CHECKER ---\n";
 
-    double grade = ReadDouble("Enter your mark out of 100: ");
+    double grade = readDouble("Enter your mark out of 100: ");
 
     if (grade > 100 || grade < 0) {
       std::cout << "Please enter a valid mark (0-100)";

@@ -9,7 +9,7 @@
 ### Functions
 - Use **mixed case** (camelCase) starting with lowercase[^6]
 - Should be "command" verbs[^6]
-- Examples: `MyExcitingFunction()`, `calculateTotal()`, `getUserData()`
+- Examples: `myExcitingFunction()`, `calculateTotal()`, `getUserData()`
 
 ### Types (Classes, Structs, Enums)
 - **CapitalCase** with capital letter for each new word[^6]
