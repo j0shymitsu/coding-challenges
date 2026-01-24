@@ -21,6 +21,8 @@ enum class NumberError {
   kDivideByZero,
 };
 
+
+
 // Reads an integer from user input with error handling
 inline int readInt(const char* prompt, int min = INT_MIN, int max = INT_MAX) {
   while (true) {
