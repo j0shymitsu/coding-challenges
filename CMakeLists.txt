@@ -31,4 +31,5 @@ add_executable(cpp_365
         23_count_digits/main.cpp
         24_sum_of_digits/main.cpp
         26_guess_the_number_random/main.cpp
+        30_vowels_and_constonants/main.cpp
 )
