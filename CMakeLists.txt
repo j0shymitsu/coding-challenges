@@ -32,4 +32,7 @@ add_executable(cpp_365
         24_sum_of_digits/main.cpp
         26_guess_the_number_random/main.cpp
         30_vowels_and_constonants/main.cpp
+        31_string_upper_lower/main.cpp
+        27_menu_driven_unit_conversion/main.cpp
+        32_palindrome_checker/main.cpp
 )

@@ -10,7 +10,7 @@ int main()
   {
     std::string user_input;
     
-    std::cout << "Enter a sentence to count its vowels and constonants: \n\n";
+    std::cout << "Enter a sentence to count its vowels and consonants: \n\n";
     std::getline(std::cin, user_input);
     vowelsAndConsonants(user_input);
 
@@ -23,7 +23,7 @@ int main()
     if (exit_state == "n" || exit_state == "N") { break; }
   }
 
-  return 0;;
+  return 0;
 }
 
 void vowelsAndConsonants(std::string input)

@@ -8,7 +8,8 @@
 #include <stdexcept>
 #include "../libs/utils.h"
 
-enum class PalindromeError {
+enum class PalindromeError 
+{
   kOk,
   kNegative,
   kOutOfRange
@@ -16,12 +17,14 @@ enum class PalindromeError {
 
 PalindromeError IsPalindrome(int n, bool& is_palindrome);
 
-int main() {
+int main() 
+{
   std::cout << "-------------------------"
             << "\n~~~ \033[92mNUMERO PALINDROMO\033[0m ~~~\n"
             << "-------------------------\n";
 
-  while (true) {
+  while (true) 
+  {
     int num = readInt(
         "\nEnter a positive number (max 2147483647) "
         "to check if it's a palindrome: ");
@@ -29,16 +32,28 @@ int main() {
     bool is_palindrome = false;
     PalindromeError err = IsPalindrome(num, is_palindrome);
 
-    if (err == PalindromeError::kOk) {
-      if (is_palindrome) {
+    if (err == PalindromeError::kOk) 
+    {
+      if (is_palindrome) 
+      {
         std::cout << "\n" << num << " \033[92mIS\033[0m a palindrome. \n";
-      } else {
+      } 
+      else 
+      {
         std::cout << "\n" << num << " is \033[31mNOT\033[0m a palindrome.\n";
       }
-    } else if (err == PalindromeError::kNegative) {
-      printError("\033[31m(func IsPalindrome): Number must be non-negative.\033[0m");
-    } else if (err == PalindromeError::kOutOfRange) {
-      printError("\033[31m(func IsPalindrome): Integer out of range.\033[0m");
+    } 
+    else if (err == PalindromeError::kNegative) 
+    {
+      printError(
+        "\033[31m(func IsPalindrome): Number must be non-negative.\033[0m"
+      );
+    } 
+    else if (err == PalindromeError::kOutOfRange) 
+    {
+      printError(
+        "\033[31m(func IsPalindrome): Integer out of range.\033[0m"
+      );
     }
 
     std::string exit_status;
@@ -52,15 +67,15 @@ int main() {
   return 0;
 }
 
-PalindromeError IsPalindrome(int n, bool& is_palindrome) {
-  if (n < 0) {
-    return PalindromeError::kNegative;
-  }
+PalindromeError IsPalindrome(int n, bool& is_palindrome) 
+{
+  if (n < 0) { return PalindromeError::kNegative; }
 
   int num = n;
   long rev_num = 0;
 
-  while (n > 0) {
+  while (n > 0) 
+  {
     rev_num = (rev_num * 10) + (n % 10);
     n = n / 10;
   }
