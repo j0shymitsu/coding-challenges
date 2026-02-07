@@ -1,9 +1,10 @@
+#include <algorithm>
 #include <iostream>
 #include <limits>
 #include <string>
 #include "../libs/utils.h"
 
-bool isPalindrome(std::string input);
+bool isPalindrome(const std::string &input);
 
 int main()
 { 
@@ -19,12 +20,11 @@ int main()
     std::getline(std::cin, user_input);
     bool is_palindrome = isPalindrome(user_input);
     
-    if (is_palindrome)
-    {
-      std::cout << "Input IS a palindrome!";
-    }
+    if (is_palindrome) { std::cout << "Input IS a palindrome!"; }
+    if (!is_palindrome) { std::cout << "Input IS NOT a palindrome!"; }
 
     std::string exit_state;
+
     std::cout << "\n\nDo you want to enter another word/sentence? "
               << "(y/n): ";
     std::cin  >> exit_state;
@@ -36,15 +36,21 @@ int main()
   return 0;
 }
 
-bool isPalindrome(std::string input)
+bool isPalindrome(const std::string &input)
 {
-  for (size_t i = 0; i < input.length(); i++)
+  int i = 0;
+  int j = input.length() - 1;
+  double hw = input.length() / 2;
+
+  std::transform(input.begin(), input.end(), input.begin(), ::tolower);
+
+  while (i <= hw)
   {
-    for (size_t j = input.length() - 1; j > 0; j--)
-    {
-      if (input[i] != input[j]) { return false; }
-    }
+    if (input[i] != input[j]) { return false; };
+    i++;
+    j--;
   }
 
   return true;
+  
 }

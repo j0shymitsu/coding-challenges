@@ -29,9 +29,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc18a130-a2b3-4bc9-a92c-607abc96ff6a" name="Changes" comment="Finish problem 30 &quot;Vowels and Consonants Calculator&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="fc18a130-a2b3-4bc9-a92c-607abc96ff6a" name="Changes" comment="Finish problem 30 &quot;Vowels and Consonants Calculator&quot;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -249,6 +247,7 @@
       <workItem from="1769602089188" duration="23000" />
       <workItem from="1770195199744" duration="413000" />
       <workItem from="1770276625768" duration="74000" />
+      <workItem from="1770364391509" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="Init; Add projects list">
       <option name="closed" value="true" />
