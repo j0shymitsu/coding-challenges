@@ -11,7 +11,7 @@ int wordCounter(std::string user_input);
 
 int main()
 {
-  std::cout << "\n\033[92m=== WORD FREQUENCY COUNT ===\033[0m\n";
+  std::cout << "\n\033[92m=== WORD FREQUENCY COUNT ===\033[0m\n\n";
 
   // while (true) 
   // {
@@ -53,7 +53,8 @@ int main()
                            "and reply reply; work work, home home, day day, "
                            "night night.";
 
-  auto result = setOfUniqueWords(test_input);                           
+  
+                          
   return 0;
 }
 
@@ -65,8 +66,19 @@ std::set<std::string> setOfUniqueWords(std::string user_input)
 
   while (iss >> current_word) { unique_words.insert(current_word); }
 
-  for (std::string const& word : unique_words) 
-  { std::cout << word << std::endl; }
+  for (auto iter = unique_words.begin(); iter != unique_words.end(); )
+  {
+    const std::string& word = *iter;
+
+    if (!isalpha(static_cast<char>(word.back())))
+    {
+      iter = unique_words.erase(iter);
+    }
+    else
+    {
+      iter++;
+    }
+  }
   
   return unique_words;
 }
