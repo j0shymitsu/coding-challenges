@@ -27,23 +27,14 @@
 
 # (^ NOT IN SHAPE)
 
-import math
-import numpy as np
+row_1 = [3]
+row_2 = [7, 4]
+row_3 = [2, 4, 6]
+row_4 = [8, 5, 9, 3]
 
-# !! Found: If number on left greater, index = index. If number on right greater, index = index + 1
-
-# Store current number (list t1, index [0]) in current_num; add to max_total
-# comparison_index=[0], compare current_num to next row indices [0:1]
-# If index [0] in t2 greater than current_num: 
-    # comparison_index remains unchanged, update and store current_num from t2[0]; add to max_total, compare to next line
-# If index [1] greater: 
-    # incrimenet comparison index by 1 [1:2], update abd store current_num from t2[1], add to max_total, compare to next line [1:2]
-# Repeat until final line incrimenting as necessary, print total
-
-t1 = [3]
-t2 = [7, 4]
-t3 = [2, 4, 6]
-t4 = [6, 5, 9, 3]
+for i in range(1, 4):
+    index = 0
+    
 
     
 

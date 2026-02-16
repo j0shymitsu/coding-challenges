@@ -6,3 +6,24 @@
 #####################
 ### LATTICE PATHS ###
 #####################
+
+class Vertex:
+    def __init__(self, value, right=None, down=None):
+        self.value = value
+        self.right = right
+        self.down = down
+
+    def count_nodes(root):
+        if root is None:
+            return 0
+        return 1 + count_nodes(root.right) + count_nodes(root.down)
+    
+
+
+
+
+
+
+
+
+
