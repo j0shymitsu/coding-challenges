@@ -118,7 +118,7 @@ bool containsCommonPattern(std::string s)    // Crude example
 
 int scorePassword(const std::string& password)
 {
-  int score;
+  int score = 0;
 
   if (password.length() < 8) { return 0; }
   if (password.length() >= 8) { score += 20; }
