@@ -4,20 +4,19 @@
 
 # Answer can be returned in any order
 
-example_nums = [3, 3]
-example_target = 6
 
-def twoSum(nums, target):
-    nums_list = []
-    for num in nums:
-        if num <= target:
-            nums_list.append(num)
-    
-    for i in range (0, len(nums_list)):
-        current_num = nums_list.pop(i)
-        for j in range(0, len(nums_list)):
-            if current_num + nums_list[j] == target:
-                return nums.index(current_num), nums.index(nums_list[j])
+class Solution:
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
 
-
-print(twoSum(example_nums, example_target))
+        num_dict = {}
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in num_dict:
+                return [num_dict[complement], i]
+            num_dict[num] = i
+        return []
