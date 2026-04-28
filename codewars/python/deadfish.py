@@ -1,12 +1,15 @@
 def parse(data):
-    result = 0
+    num = 0
+    result = []
 
     for char in data:
         if char == "i":
-            result += 1
+            num += 1
         elif char == "d":
-            result -= 1
+            num -= 1
         elif char == "s":
-            result = result**2
+            num = num**2
         elif char == "o":
-            yield result
+            result.append(num)
+
+    return result
