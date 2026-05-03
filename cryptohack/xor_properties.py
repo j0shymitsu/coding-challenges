@@ -1,21 +1,12 @@
-def hex_to_bytes(hex_str):
-    return bytes.fromhex(hex_str)
+from pwn import *
 
-
-def commutative(a, b):
-    return a ^ b == b ^ a
-
-
-def associative(a, b, c):
-    return (a ^ b) ^ c == a ^ (b ^ c)
-
-
-def identity(a):
-    return a ^ 0 == a
-
-
-def inverse(a):
-    return a ^ a == 0
-
-
+FLAG_XOR_KEY1_XOR_KEY2_XOR_KEY3 = "04ee9855208a2cd59091d04767ae47963170d1660df7f56f5faf"
 KEY1 = "a6c8b6733c9b22de7bc0253266a3867df55acde8635e19c73313"
+KEY2_XOR_KEY1 = "37dcb292030faa90d07eec17e3b1c6d8daf94c35d4c9191a5e1e"
+KEY2_XOR_KEY3 = "c1545756687e7573db23aa1c3452a098b71a7fbf0fddddde5fc1"
+
+KEY2 = xor(bytes.fromhex(KEY2_XOR_KEY1), bytes.fromhex(KEY1))
+KEY3 = xor(bytes.fromhex(KEY2_XOR_KEY3), bytes.fromhex(KEY1))
+
+FLAG = xor(bytes.fromhex(FLAG_XOR_KEY1_XOR_KEY2_XOR_KEY3), KEY3)
+print(FLAG.decode())
