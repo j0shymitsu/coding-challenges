@@ -1,3 +1,3 @@
 # Notes
 
-## cat
+cd /var/spool/"$myname"/foo

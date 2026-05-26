@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/bash./
 
-echo Hello World!
+cat /etc/bandit_pass/bandit24 > /tmp/j0shy/password1
