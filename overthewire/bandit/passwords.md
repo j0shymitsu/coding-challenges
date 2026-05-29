@@ -25,3 +25,4 @@
 23 - 0Zf11ioIjMVN551jX3CmStKLYqjk54Ga
 24 - gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
 25 - iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
+26 - bandit26.key (uses 'more' in shell, use vim to escape)
